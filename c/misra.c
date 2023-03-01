@@ -1,6 +1,10 @@
 #include <stdnoreturn.h>
 #include <stdalign.h>
 
+#include "file.h"
+
+static const char* s = "*** misra.c is here ***";
+
 int addnum(int a, int b) {
     int result = a + b;
     if (result == 0) {
