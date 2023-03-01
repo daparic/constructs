@@ -3,7 +3,7 @@
 
 #include "file.h"
 
-static const char* s = "*** misra.c is here ***";
+static const char *s = "*** misra.c is here ***";
 
 int addnum(int a, int b) {
     int result = a + b;
