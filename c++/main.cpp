@@ -34,6 +34,11 @@ TEST_F(Superstructure, test1) {
 }
 
 TEST_F(Superstructure, test2) {
+    std::vector<int *> v;
+    for (int i = 0; i < 9; i++) {
+        int *p = new int(i);
+        std::cout << "[" << *p << "]\n";
+    }
 }
 
 int main(int argc, char *argv[]) {
