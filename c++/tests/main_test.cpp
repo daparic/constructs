@@ -4,12 +4,20 @@
 
 class Ubject {
 public:
+    Ubject(int n) : n_(n) {
+    }
     Ubject() {
         std::cout << "[Ubject]" << std::endl;
     }
     ~Ubject() {
         std::cout << "[~Ubject]" << std::endl;
     }
+    int get() {
+        return n_;
+    }
+
+private:
+    int n_;
 };
 
 TEST(BasicTest, AddingNumbers) {
@@ -29,6 +37,15 @@ TEST(MemoryLeak, Leak01) {
     };
 
     func();
+}
+
+TEST(MemoryLeak, testcontainer) {
+    Ubject b1(3), b2(1), b3(4);
+    std::vector<Ubject> objects{b1, b2, b3};
+    std::cout << objects.size() << std::endl;
+    for (auto object : objects) {
+        std::cout << object.get();
+    }
 }
 
 int main(int argc, char **argv) {
